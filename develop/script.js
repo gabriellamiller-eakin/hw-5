@@ -1,7 +1,3 @@
-// psuedo code 
-
-// starting with the jumbotron, I need to set the #currentDay ID to = the current Month,Day, and Year using Moment.js 
-// To do that, I need to create variables using JQuery that will grab the #currentDay ID and the .container class since I will be needing to set text/append in both of these. 
 
 $(document).ready(function() { 
 
@@ -13,8 +9,58 @@ var currentDate = moment().format('MMMM DD')
 
 var weekdayName = moment(currentDate).format('dddd')
 
-// this is appending the current day name, month, and day number to the currentdayEl using moment.js
-var setDate = currentdayEl.text(weekdayName + ", " +currentDate + "th");
-currentdayEl.append(setDate);
+var currentTime = moment().format("H"); 
+
+var time =["9","10","11","12","13","14","15", "16", "17"];
+var i=0; 
+
+checkhour(); 
+init(); 
+
+function checkhour () {
+
+var parseTime = parseInt(currentTime);
+// console.log(parseTime);
+
+$(time).each(function(hour){
+var hour = parseInt(time[i++]);
+// console.log(hour);
+
+if (hour<parseTime){
+    $("#time" + hour).addClass("past");
+}
+else if (hour === parseTime) {
+    $("#time" + hour).removeClass("past");
+    $("#time" + hour).addClass("present");
+}
+else {
+    $("#time" + hour).removeClass("past");
+    $("#time" + hour).removeClass("present");
+    $("#time" + hour).addClass("future")
+}
+
+})
+}
+
+function init(){
+
+    var storedcontent = (local.localStorage.getIteam("calItems"));
+}
+
+function storeinput () {
+    var textareaContent = $(this).siblings('textarea').val(); 
+    localStorage.setItem("calItems", textareaContent);
+}
+
+$(".saveBtn").on("click", function(event){
+
+    event.preventDefault();
+
+    var textareaContent = $(this).siblings('textarea').val(); 
+    // console.log(textareaContent);
+
+storeinput(); 
+
+});
 
 });

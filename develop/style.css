@@ -4,6 +4,15 @@ body {
   line-height: 1;
 }
 
+textarea{
+  background: transparent;
+  border: none;
+  resize: none;
+  color: #000000;
+  border-left: 1px solid black;
+  padding: 10px;
+}
+
 .jumbotron {
   text-align: center;
   background-color: transparent;
@@ -21,6 +30,18 @@ body {
   border-radius: 15px;
 }
 
+.row {
+  white-space: pre-wrap;
+  height: 80px;
+  border-top: 1px solid white;;
+}
+
+.hour {
+  background-color: #ffffff;
+  color: #000000;
+  border-top: 1px dashed #000000;
+}
+
 .past {
   background-color: #d3d3d3;
   color: white;
@@ -36,37 +57,15 @@ body {
   color: white;
 }
 
-#user-input {
-  width: 75%; 
-  padding: 12px 20px;
-  background-color:rgb(216, 213, 213);
-  border: 0px;
-  outline: none; 
-  font-size: 20px; 
-  font-family: 'Commissioner', sans-serif;
-
+.saveBtn {
+  border-left: 1px solid black;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #06AED5;
+  color: white;
 }
 
-button {
-  background-color: rgb(20, 19, 20);
-  border: none;
-  text-align: center;
-  padding:15px 32px; 
-  position: relative;
-  left: 100px; 
-  color:white; 
-  font-family: 'Commissioner', sans-serif;
-  font-size:16px; 
-  border-radius: 12px; 
-}
-
-button:hover {
-  color:rgb(199, 193, 193); 
+.saveBtn i:hover {
+  font-size: 20px;
   transition: all .3s ease-in-out;
-}
-
-p {
-  font-size: 20px; 
-  font-family: 'Commissioner', sans-serif;
-  font-weight: bold;
 }
