@@ -15,7 +15,7 @@ var time =["9","10","11","12","13","14","15", "16", "17"];
 var i=0; 
 
 checkhour(); 
-init(); 
+loadPage(); 
 
 function checkhour () {
 
@@ -39,28 +39,26 @@ else {
     $("#time" + hour).addClass("future")
 }
 
-})
-}
-
-function init(){
-
-    var storedcontent = (local.localStorage.getIteam("calItems"));
-}
-
-function storeinput () {
-    var textareaContent = $(this).siblings('textarea').val(); 
-    localStorage.setItem("calItems", textareaContent);
-}
+})};
 
 $(".saveBtn").on("click", function(event){
 
     event.preventDefault();
 
     var textareaContent = $(this).siblings('textarea').val(); 
-    // console.log(textareaContent);
+    localStorage.setItem("myContent", textareaContent);
+    console.log(textareaContent);
 
-storeinput(); 
+    var myContent = localStorage.getItem("myContent");
+    textareaContent= myContent; 
+    
+});
+
+function loadPage (){
+
+    var myContent = localStorage.getItem("myContent");
+    $()= myContent; 
+};
 
 });
 
-});
